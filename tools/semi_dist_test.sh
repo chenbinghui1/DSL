@@ -8,7 +8,7 @@ PORT=${PORT:-29505}
 
 echo "the config file is: ${CONFIG}"
 
-WORKDIR="workdir_voc/RLA_r50_caffe_mslonger_tricks_alldata_12+coco20unlabel_thres_0.1-0.3_affine-UBAug_patchshuffleonlabel_iterema0.99_dynamic1-longer_newsteps_lw2.5_nofuse_iterlabel_si-soft-1.0"
+WORKDIR="workdir_voc/xxxx"
 
 CHECKPOINT="${WORKDIR}/epoch_23.pth"
 
