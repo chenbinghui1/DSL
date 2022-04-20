@@ -1,4 +1,7 @@
-# Source code for CVPR2022 paper: DSL [Dense Learning based Semi-Supervised Object Detection](https://arxiv.org/pdf/2204.07300.pdf)
+![Python >=3.8]
+![PyTorch >=1.8.0]
+![mmcv-full >=1.3.10]
+# [CVPR2022] DSL: [Dense Learning based Semi-Supervised Object Detection](https://arxiv.org/pdf/2204.07300.pdf)
 
 DSL is the first work on Anchor-Free detector for Semi-Supervised Object Detection (SSOD).
 
