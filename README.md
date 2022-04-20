@@ -157,7 +157,7 @@ tar -xf STAC_JSON.tar.gz
 cp coco/annotations/instances_unlabeled2017.json ${project_root_dir}/DSL/data_list/coco_semi/semi_supervised/
 ```
 
-### 3. Train as steps4-steps7 under Partially Labeled data protocol
+### 3. Train as steps4-steps7 which are used in Partially Labeled data protocol
 Change the corresponding paths before training.
 
 
@@ -216,7 +216,7 @@ cd ../..
 
 You will obtain the corresponding list file(.json): (`voc12_trainval_coco20class.json`), and the corresponding coco20classes images will be copyed to (`${project_root_dir}/data/semivoc/unlabeled_images/full/`) and the list file(.txt) will also be generated at (`${project_root_dir}/data/semivoc/unlabel_prepared_annos/Industry/voc12_trainval_coco20class.txt`)
 
-### 4. Train as steps4-steps7 under Partially Labeled data protocol
+### 4. Train as steps4-steps7 which are used in Partially Labeled data protocol
 Please change the corresponding paths before training, and refer to configs/fcos_semi/voc/xx.py.
 
 # Acknowledgement
