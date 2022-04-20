@@ -219,6 +219,13 @@ You will obtain the corresponding list file(.json): (`voc12_trainval_coco20class
 ### 4. Train as steps4-steps7 which are used in Partially Labeled data protocol
 Please change the corresponding paths before training, and refer to configs/fcos_semi/voc/xx.py.
 
+# Testing
+Please refer to (`tools/semi_dist_test.sh`).
+```bash
+./tools/semi_dist_test.sh
+```
+
+
 # Acknowledgement
 
 -   [STAC](https://github.com/google-research/ssl_detection)
