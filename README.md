@@ -20,9 +20,7 @@ mmcv-full 1.3.10
 
 ## Download pre-trained models
 
-```bash
 Download [resnet50_rla_2283.pth](https://drive.google.com/file/d/1cetP1SdOiwznLxlBUaHG8Q8c4RIwToWW/view) for later use
-```
 
 # Training
 For dynamically labeling the unlabeled images, original COCO dataset and VOC dataset will be converted to (`DSL-style`) datasets where annotations are saved in different json files and each image has its own annotation file. In addition, this implementation is slightly different from the original paper, where we add PatchShuffle also to the labeled images and remove MetaNet for speeding up training, the final performance is similar as the original paper.
