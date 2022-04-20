@@ -41,7 +41,7 @@ mkdir ori_data
 #        - ...
 ```
 
-## For COCO Partially Labeled Data protocal
+## For COCO Partially Labeled Data protocol
 ### 1. Download coco dataset and unzip it
 ```bash
 mkdir ori_data/coco
@@ -128,7 +128,7 @@ Use (`demo/model_train/unlabel_train.sh`) to train our semi-supervised algorithm
 ./demo/model_train/unlabel_train.sh
 ```
 
-## For COCO Fully Labeled Data protocal
+## For COCO Fully Labeled Data protocol
 The overall steps are similar as steps in above Partially Labeled Data guaidline. The additional steps to do is to download and organize the new unlabeled data.
 ### 1. Organize the new images
 Put all the jpg images into the generated DSL-style semicoco data dir like: semicoco/unlabel_images/full/xx.jpg;
@@ -157,7 +157,7 @@ tar -xf STAC_JSON.tar.gz
 cp coco/annotations/instances_unlabeled2017.json ${project_root_dir}/DSL/data_list/coco_semi/semi_supervised/
 ```
 
-### 3. Train as steps4-steps7 under Partially Labeled data protocal
+### 3. Train as steps4-steps7 under Partially Labeled data protocol
 Change the corresponding paths before training.
 
 
@@ -216,7 +216,7 @@ cd ../..
 
 You will obtain the corresponding list file(.json): (`voc12_trainval_coco20class.json`), and the corresponding coco20classes images will be copyed to (`${project_root_dir}/data/semivoc/unlabeled_images/full/`) and the list file(.txt) will also be generated at (`${project_root_dir}/data/semivoc/unlabel_prepared_annos/Industry/voc12_trainval_coco20class.txt`)
 
-### 4. Train as steps4-steps7 under Partially Labeled data protocal
+### 4. Train as steps4-steps7 under Partially Labeled data protocol
 Please change the corresponding paths before training, and refer to configs/fcos_semi/voc/xx.py.
 
 # Acknowledgement
