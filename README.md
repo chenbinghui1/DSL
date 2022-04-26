@@ -12,7 +12,7 @@ __This code is established on [mmdetection](https://github.com/open-mmlab/mmdete
 
 # Instruction
 
-## Install dependenciesa
+## Install dependencies
 
 ```bash
 pytorch>=1.8.0
