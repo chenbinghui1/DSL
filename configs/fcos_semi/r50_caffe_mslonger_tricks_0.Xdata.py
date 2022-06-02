@@ -115,6 +115,13 @@ data = dict(
         ann_file='data_list/coco_semi/semi_supervised/instances_train2017.2@10-unlabeled.json',
         img_prefix=data_root + 'images/full/',
         pipeline=test_pipeline)
+    ## This bellow is used for testing model performances over COCO dataset, if you use toos/semi_dist_test.sh, please uncomment this bellow codes and comment the above
+    #test=dict(
+    #    type = dataset_type,
+    #    ann_file = 'data_list/coco_semi/semi_supervised/instances_val2017.json',
+    #    img_prefix = data_root + 'valid_images/full/',
+    #    pipeline = test_pipeline,
+    #    )
 )
 
 # learning policy

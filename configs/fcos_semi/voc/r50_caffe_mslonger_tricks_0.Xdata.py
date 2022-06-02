@@ -105,7 +105,7 @@ data = dict(
             ann_file='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/ImageSets/Main/trainval.txt',
             img_prefix='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/',
             pipeline=train_pipeline)),
-    #### Evaluate with VOC metric, metric="mAP"
+    #### Evaluate with VOC metric, metric="mAP"; or use toos/semi_dist_test.sh
     val=dict(
         type='VOCDataset',
         ann_file='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/ImageSets/Main/test.txt',
@@ -116,7 +116,7 @@ data = dict(
         ann_file='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/ImageSets/Main/test.txt',
         img_prefix='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/',
         pipeline=test_pipeline)
-    ##### Evaluate with COCO metric, metric="bbox"
+    ##### Evaluate with COCO metric, metric="bbox";or use tools/semi_dist_test.sh
     #val=dict(
     #    type='Voc2CocoDataset',
     #    ann_file='data_list/voc_semi/voc07_test.json',
@@ -126,6 +126,13 @@ data = dict(
     #    type='Voc2CocoDataset',
     #    ann_file='data_list/voc_semi/voc07_test.json',
     #    img_prefix='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/JPEGImages/',
+    #    pipeline=test_pipeline)
+
+    ##### For inferencing pseudo-labels of the unlabel images via tools/inference_unlabeled_coco_data.sh
+    #test=dict(
+    #    type='Voc2CocoDataset',
+    #    ann_file='data_list/voc_semi/voc12_trainval.json',
+    #    img_prefix='/gruntdata2/tcguo/voc/VOCdevkit/VOC2012/JPEGImages/',
     #    pipeline=test_pipeline)
 )
 

@@ -2,23 +2,21 @@
 
 PYTHON=${PYTHON:-"python"}
 
-CONFIG="configs/fcos_semi/voc/RLA_r50_caffe_mslonger_tricks_0.Xdata.py"
+CONFIG="configs/fcos_semi/RLA_r50_caffe_mslonger_tricks_0.Xdata_unlabel_dynamic_lw_nofuse_iterlabel_si-soft_singlestage.py"
 GPUS=8
 PORT=${PORT:-29505}
 
 echo "the config file is: ${CONFIG}"
 
-WORKDIR="workdir_voc/xxxx"
+WORKDIR="workdir_coco/xxxx"
 
-CHECKPOINT="${WORKDIR}/epoch_23.pth"
+CHECKPOINT="${WORKDIR}/epoch_28.pth_ema"
 
 PREFIX="${CHECKPOINT}-unlabeled"
 echo "using the checkpoint file: ${CHECKPOINT}"
 
 $PYTHON -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT \
     $(dirname "$0")/test.py $CONFIG $CHECKPOINT --launcher pytorch --eval bbox
-
-echo "the result is saving to :${PREFIX}.bbox.json"
 
 
 

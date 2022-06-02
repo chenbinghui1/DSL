@@ -10,7 +10,7 @@ DSL is the first work on Anchor-Free detector for Semi-Supervised Object Detecti
 __This code is established on [mmdetection](https://github.com/open-mmlab/mmdetection) and is only used for research.__
 
 
-# Instruction
+# [0] Instruction
 
 ## Install dependencies
 
@@ -21,11 +21,11 @@ python>=3.8
 mmcv-full 1.3.10
 ```
 
-## Download ImageNet pre-trained models
+## Download ImageNet pre-trained models for initializing DSL.
 
 Download [resnet50_rla_2283.pth](https://drive.google.com/file/d/1cetP1SdOiwznLxlBUaHG8Q8c4RIwToWW/view) (Google) [resnet50_rla_2283.pth](https://pan.baidu.com/s/1GrNxNariVpb9S5EUFW1eng) (Baidu, extract code: 5lf1) for later DSL training.
 
-# Training
+# [1] Training
 For dynamically labeling the unlabeled images, original COCO dataset and VOC dataset will be converted to (`DSL-style`) datasets where annotations are saved in different json files and each image has its own annotation file. In addition, this implementation is slightly different from the original paper, where we clean the code, merge some data flow for speeding up training, add PatchShuffle also to the labeled images, and remove MetaNet for speeding up training as well, the final performance is similar as the original paper.
 
 ## Clone this project & Create data root dir
@@ -222,11 +222,18 @@ You will obtain the corresponding list file(.json): (`voc12_trainval_coco20class
 ### 4. Train as steps4-steps7 which are used in Partially Labeled data protocol
 Please change the corresponding paths before training, and refer to configs/fcos_semi/voc/xx.py.
 
-# Testing
+# [2] Testing
 Please refer to (`tools/semi_dist_test.sh`).
 ```bash
 ./tools/semi_dist_test.sh
 ```
+ 
+We also provide the models trained by us bellow.
+
+### COCO:
+|Model|mAP|BaiduDrive|Extract Code|
+|:--- |:----:|:----:|:--:|
+|1% data|22.1|[coco0.01](https://pan.baidu.com/s/18EEWimZjsup20VvBQ1J5Cw)|8p3i|
 
 
 # Acknowledgement

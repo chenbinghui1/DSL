@@ -173,7 +173,7 @@ data = dict(
     #    img_prefix='/gruntdata2/tcguo/voc/VOCdevkit/VOC2007/JPEGImages/',
     #    pipeline=test_pipeline),
 
-    ### For inferencing pseudo-labels of the unlabel images; Change the following path to VOC dir
+    #### For inferencing pseudo-labels of the unlabel images via tools/inference_unlabeled_coco_data.sh
     test=dict(
         type='Voc2CocoDataset',
         ann_file='data_list/voc_semi/voc12_trainval.json',
