@@ -10,7 +10,7 @@ DSL is the first work on Anchor-Free detector for Semi-Supervised Object Detecti
 __This code is established on [mmdetection](https://github.com/open-mmlab/mmdetection) and is only used for research.__
 
 
-# [0] Instruction
+# Instruction
 
 ## Install dependencies
 
@@ -25,7 +25,7 @@ mmcv-full 1.3.10
 
 Download [resnet50_rla_2283.pth](https://drive.google.com/file/d/1cetP1SdOiwznLxlBUaHG8Q8c4RIwToWW/view) (Google) [resnet50_rla_2283.pth](https://pan.baidu.com/s/1GrNxNariVpb9S5EUFW1eng) (Baidu, extract code: 5lf1) for later DSL training.
 
-# [1] Training
+# Training
 For dynamically labeling the unlabeled images, original COCO dataset and VOC dataset will be converted to (`DSL-style`) datasets where annotations are saved in different json files and each image has its own annotation file. In addition, this implementation is slightly different from the original paper, where we clean the code, merge some data flow for speeding up training, add PatchShuffle also to the labeled images, and remove MetaNet for speeding up training as well, the final performance is similar as the original paper.
 
 ## Clone this project & Create data root dir
@@ -222,7 +222,7 @@ You will obtain the corresponding list file(.json): (`voc12_trainval_coco20class
 ### 4. Train as steps4-steps7 which are used in Partially Labeled data protocol
 Please change the corresponding paths before training, and refer to configs/fcos_semi/voc/xx.py.
 
-# [2] Testing
+# Testing
 Please refer to (`tools/semi_dist_test.sh`).
 ```bash
 ./tools/semi_dist_test.sh
@@ -232,8 +232,18 @@ We also provide the models trained by us bellow.
 
 ### COCO:
 |Model|mAP|BaiduDrive|Extract Code|
-|:--- |:----:|:----:|:--:|
-|1% data|22.1|[coco0.01](https://pan.baidu.com/s/18EEWimZjsup20VvBQ1J5Cw)|8p3i|
+|:---:|:----:|:----:|:--:|
+|1% Data|22.1|[coco0.01](https://pan.baidu.com/s/18EEWimZjsup20VvBQ1J5Cw)|8p3i|
+|2% Data|25.5|[coco0.02](https://pan.baidu.com/s/1JIb4U3qQlhnNw9n9qEVctQ)|bmf9|
+|5% Data|31.5|[coco0.05](https://pan.baidu.com/s/1CbuaOk-JL9ApwggZ_mzZYw)|4b7j|
+|10% Data|36.2|[coco0.1](https://pan.baidu.com/s/17t9HWQw8wPVxbMXHp-Ji8A)|t58q|
+|All Data|43.8|[cocoAlldata](https://pan.baidu.com/s/1BWXY3h_F4N-zEZ5_bcAJYQ)|k4g9|
+
+### VOC:
+|Model|AP50|mAP|BaiduDrive|Extract Code|
+|:---:|:----:|:---:|:----:|:--:|
+|Unlabel: VOC12|80.7|56.8|[VOC12](https://pan.baidu.com/s/1utzAmco3WNir6EyFyrQIMA)|nu7b|
+|Unlabel: VOC12+COCO20Classes|82.1|59.8|[VOC12-COCO20Classes](https://pan.baidu.com/s/1Xf67mxKwHudUYoNVOTvAmg)|79xp|
 
 
 # Acknowledgement
