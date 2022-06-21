@@ -189,10 +189,11 @@ class SemiEpochBasedRunner(EpochBasedRunner):
                 data_batch['img_metas'].data[0][-1]['img_shape'] = (int(data_batch['img_metas'].data[0][-1]['img_shape'][0]/2), int(data_batch['img_metas'].data[0][-1]['img_shape'][1]/2), data_batch['img_metas'].data[0][-1]['img_shape'][2])
                 data_batch['img_metas'].data[0][-1]['pad_shape'] = (int(data_batch['img_metas'].data[0][-1]['pad_shape'][0]/2), int(data_batch['img_metas'].data[0][-1]['pad_shape'][1]/2), data_batch['img_metas'].data[0][-1]['pad_shape'][2])
                 data_batch['img_metas'].data[0][-1]['scale_factor'] = data_batch['img_metas'].data[0][-1]['scale_factor']/2
+                B = data_batch['img'].data[0].shape[0]
 
-                tmp = torch.zeros_like(data_batch['img'].data[0][1:,:,:,:])
+                tmp = torch.zeros_like(data_batch['img'].data[0][B-1:,:,:,:])
                 _,_,h,w = data_batch['img'].data[0].shape
-                cdata = torch.nn.functional.interpolate(data_batch['img'].data[0][1:,:,:,:].clone(), (int(h/2),int(w/2)), mode='bilinear')
+                cdata = torch.nn.functional.interpolate(data_batch['img'].data[0][B-1:,:,:,:].clone(), (int(h/2),int(w/2)), mode='bilinear')
                 tmp[:,:,:int(h/2),:int(w/2)] = cdata
                 data_batch['img'].data[0] = torch.cat((data_batch['img'].data[0],tmp),0)
 
