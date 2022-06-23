@@ -121,6 +121,7 @@ data = dict(
     samples_per_gpu=2,
     # if you change workers_per_gpu, please change preload below at the same time
     workers_per_gpu=2,
+    # batch_config controls the ratio of labeled to unlabeled images with one databatch
     batch_config=dict(ratio =[[1, 1],]),
     train=dict(
         type=dataset_type,
@@ -137,7 +138,7 @@ data = dict(
         labelmapper = data_root + 'mmdet_category_info.json',
         img_prefix = data_root + 'images/full/',
         pipeline = unlabel_train_pipeline,
-        # fixed thres like [0.1, 0.4]; or ada thres
+        # fixed thres like [0.1, 0.4]; or ada thres, this file will be generated during running (please remove it after each training)
         thres="adathres.json",
         ),
     unlabel_pred=dict(
