@@ -93,7 +93,7 @@ test_pipeline = [
         ])
 ]
 
-
+## recommend to use absolute path
 data = dict(
     samples_per_gpu=2,
     workers_per_gpu=2,

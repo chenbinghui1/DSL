@@ -34,7 +34,7 @@ def report(args, dst_path):
             if not os.path.exists(os.path.join(dst_path, name)):
                 with open(os.path.join(dst_path, name),'w') as F:
                     tmp_data={}
-                    tmp_data["imageName"] = "full/" + name
+                    tmp_data["imageName"] = os.path.join("full/", coco.load_imgs([data[i]['image_id']])[0]['file_name'])
                     tmp_data["targetNum"] = 0
                     tmp_data["rects"] = []
                     tmp_data["tags"] = []
@@ -66,7 +66,7 @@ def report(args, dst_path):
                 with open(os.path.join(dst_path, data['images'][i]['file_name']+'.json'),'w') as F:
                     cnt +=1
                     tmp_data={}
-                    tmp_data["imageName"] = "full/"+data['images'][i]['file_name']
+                    tmp_data["imageName"] = os.path.join("full/", data['images'][i]['file_name'])
                     tmp_data["targetNum"] = 0
                     tmp_data["rects"] = []
                     tmp_data["tags"] = []

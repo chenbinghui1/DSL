@@ -114,6 +114,7 @@ test_pipeline = [
 ]
 
 dataset_type = 'SemiVOCDataset'
+## DSL style path; recommend to use absolute path
 data_root = '/gruntdata1/bhchen/factory/data/semivoc/'
 
 data = dict(

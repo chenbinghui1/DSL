@@ -94,6 +94,7 @@ test_pipeline = [
 ]
 
 dataset_type = 'CocoDataset'
+# recommend to use absolute path
 data_root = '/gruntdata1/bhchen/factory/data/semicoco/'
 
 data = dict(

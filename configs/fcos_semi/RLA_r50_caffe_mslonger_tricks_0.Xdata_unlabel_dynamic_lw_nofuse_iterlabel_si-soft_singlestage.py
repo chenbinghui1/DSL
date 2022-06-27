@@ -114,7 +114,7 @@ test_pipeline = [
 ]
 
 dataset_type = 'SemiCOCODataset'
-## DSL-style data root
+## DSL-style data root; recommend to use absolute path
 data_root = '/gruntdata1/bhchen/factory/data/semicoco/'
 
 data = dict(

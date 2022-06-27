@@ -1,6 +1,7 @@
 # for coco, copy the initial pseudo-labels to semicoco dir
-rm -rf ../data/semicoco/unlabel_prepared_annos/Industry/annotations/full/
-cp -r workdir_coco/r50_caffe_mslonger_tricks_0.1data/epoch_55.pth-unlabeled.bbox.json_thres0.1_annos/ ../data/semicoco/unlabel_prepared_annos/Industry/annotations/full/
+anno_path="/gruntdata1/bhchen/factory/data/semicoco/unlabel_prepared_annos/Industry/annotations/full/"
+rm -rf $anno_path
+cp -r workdir_coco/r50_caffe_mslonger_tricks_0.1data/epoch_55.pth-unlabeled.bbox.json_thres0.1_annos/ $anno_path
 
 # for voc, copy the initial pseudo-labels to semivoc dir
 #rm -rf ../data/semivoc/unlabel_prepared_annos/Industry/annotations/full/

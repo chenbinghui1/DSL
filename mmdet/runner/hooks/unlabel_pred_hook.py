@@ -373,9 +373,9 @@ class UnlabelPredHook(Hook):
     def __init__(self, kwargs, config, task_type, interval_mode='epoch', interval=1):
         self.dataset_type = kwargs["type"]
         self.num_gpus = kwargs["num_gpus"]
-        self.image_root_path = kwargs["image_root_path"]
-        self.image_list_file = kwargs["image_list_file"]
-        self.anno_root_path = kwargs["anno_root_path"]
+        self.image_root_path = os.path.abspath(kwargs["image_root_path"])
+        self.image_list_file = os.path.abspath(kwargs["image_list_file"])
+        self.anno_root_path = os.path.abspath(kwargs["anno_root_path"])
         
         self.start_point = int(kwargs.get("start_point", 0))
         self.fuse = kwargs.get("fuse_history", False)
@@ -411,7 +411,7 @@ class UnlabelPredHook(Hook):
         self.interval = interval
         self.eval_config = kwargs["eval_config"] \
             if task_type in ('Det', 'Det_Sem') else None
-        self.eval_img_path = kwargs.get("img_path")
+        self.eval_img_path = os.path.abspath(kwargs.get("img_path"))
         self.eval_img_resize_size = kwargs.get("img_resize_size")
         self.eval_low_level_scale = kwargs.get("low_level_scale")
         self.task_type = task_type
