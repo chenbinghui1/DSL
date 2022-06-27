@@ -121,7 +121,7 @@ data = dict(
     samples_per_gpu=2,
     # if you change workers_per_gpu, please change preload below at the same time
     workers_per_gpu=2,
-    # batch_config controls the ratio of labeled to unlabeled images with one databatch
+    # batch_config controls the ratio of labeled to unlabeled images within one databatch
     batch_config=dict(ratio =[[1, 1],]),
     train=dict(
         type=dataset_type,
