@@ -21,6 +21,10 @@ python>=3.8
 mmcv-full 1.3.10
 ```
 
+## GPU requirements
+
+We train our model on 8 V100 GPUs.
+
 ## Download ImageNet pre-trained models for initializing DSL.
 
 Download [resnet50_rla_2283.pth](https://drive.google.com/file/d/1cetP1SdOiwznLxlBUaHG8Q8c4RIwToWW/view) (Google) [resnet50_rla_2283.pth](https://pan.baidu.com/s/1GrNxNariVpb9S5EUFW1eng) (Baidu, extract code: 5lf1) for later DSL training.
